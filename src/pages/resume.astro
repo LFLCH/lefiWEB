@@ -1,0 +1,25 @@
+---
+import BasicPage from '../layouts/BasicPage.astro';
+---
+<BasicPage pageName="Resume">
+   <p class="instructions">
+     This is my resume. Enjoy reading it !
+   </p>
+    <div id="resume-content" class="instructions"> 
+    </div>
+</BasicPage>
+<script>
+    const url = "https://k4kyrw.deta.dev";
+    var elem = document.getElementById("resume-content")!;
+    fetch(url+'/resume')
+  .then((response) => response.json())
+  .then((resume) => {
+    for(const category of resume.categories){
+        elem.innerHTML+="<h2>"+category.name+"<h2>";
+        for(const article of category.articles){
+            elem.innerHTML+="<h3>"+article.title+"("+article.dates+")"+"</h3>";
+            elem.innerHTML+="<p>"+article.content+"</p>";
+        }
+    }
+  });
+</script>

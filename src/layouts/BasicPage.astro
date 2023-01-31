@@ -1,0 +1,13 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Layout from "./Layout.astro";
+
+const {pageName} = Astro.props;
+
+---
+<Layout title={"Léo Filoche | " + pageName}>
+<main>
+    <Navigation title={pageName}></Navigation>
+    <slot />
+</main>
+</Layout>

@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+<Layout title="Léo Filoche">
+	<main>
+		<h1><span class="text-gradient">Welcome</span> aboard !</h1>
+		<h2>I'm <span class="text-gradient">Léo Filoche</span></h2>
+		<p class="instructions">
+			As you can understand, this is my <strong>personal page</strong>. <br>
+			It allows me to describe <strong>myself</strong> and the <strong>activities</strong> and <strong>projects</strong> in which I am involved in. <br>
+		</p>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="/about"
+				title="👀 About"
+				body="Who is behind all this ?"
+			/>
+			<Card
+				href="/projects"
+				title="❤️ Projects"
+				body="See in a nutshell some projects I am proud of."
+			/>
+			<Card
+				href="/resume"
+				title="📜 Resume"
+				body="It's always good to have a resume on hand. Here is mine."
+			/>
+			<Card
+				href="/contact"
+				title="🤙 Contact"
+				body="Reach me if you have any question to ask, I will be pleased to answer !"
+			/>
+		</ul>
+	</main>
+</Layout>
+

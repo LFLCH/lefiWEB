@@ -1,0 +1,20 @@
+---
+import Card from "../components/Card.astro";
+import BasicPage from "../layouts/BasicPage.astro"
+
+---
+
+<BasicPage pageName="Contact">
+    <p class="instructions">
+        I have several communication media, choose the one that suits you best to contact me.
+    </p>
+    <ul role="list" class="link-card-grid">
+        <Card href="mailto:leo.filoche@etudiant.univ-rennes1.fr" title="Academic email" body="leo.filoche@etudiant.univ-rennes1.fr">
+        </Card>    
+        <Card href="mailto:leofiloche.wk@gmail.com" title="Personal email" body="leofiloche.wk@gmail.com">
+        </Card>
+        <Card href="https://www.linkedin.com/in/leofiloche/" title="LinkedIn" body="@leofiloche">
+
+        </Card>
+    </ul>
+</BasicPage>

@@ -1,0 +1,20 @@
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 0.75em;
+}
+.menu {
+    display: flex;
+    width: 18rem;
+    height: 1.2em;
+}
+.menu,.sub-nav {
+    white-space: nowrap;
+}
+.sub-nav {
+    color:rgb(var(--accent))
+}
+.menu:hover{
+    font-style:oblique;
+}
