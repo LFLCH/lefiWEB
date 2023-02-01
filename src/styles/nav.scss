@@ -9,6 +9,10 @@ nav {
     width: 18rem;
     height: 1.2em;
 }
+.menu > a {
+    text-decoration: unset;
+}
+
 .menu,.sub-nav {
     white-space: nowrap;
 }
@@ -16,5 +20,9 @@ nav {
     color:rgb(var(--accent))
 }
 .menu:hover{
+    text-decoration: underline;
+}
+.menu:hover > a {
+    text-decoration: underline;
     font-style:oblique;
 }
