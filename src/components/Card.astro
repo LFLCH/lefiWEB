@@ -7,10 +7,10 @@ export interface Props {
 }
 
 const { href, title, body } = Astro.props;
-const baseUrl = href.charAt(0)=='/'?import.meta.env.BASE_URL.slice(0,-1):""; //"lefiWEB";
+const baseUrl = href.charAt(0)=='/'?import.meta.env.BASE_URL.slice(0,-1):""; 
 ---
 
-<li class="link-card">
+<div class="link-card">
 	<a href={baseUrl+href}>
 		<h2>
 			{title}
@@ -19,4 +19,4 @@ const baseUrl = href.charAt(0)=='/'?import.meta.env.BASE_URL.slice(0,-1):""; //"
 			{body}
 		</p>
 	</a>
-</li>
+</div>
