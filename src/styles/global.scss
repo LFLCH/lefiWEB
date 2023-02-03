@@ -1,7 +1,7 @@
 :root {
     --accent: 91, 117, 194;
     --accent-gradient: linear-gradient(45deg, rgb(58, 237, 142), #628cda 30%, white 60%);
-}
+}//3aed8e 628cda
 html {
     font-family: system-ui, sans-serif;
     background-color: #F6F6F6;
@@ -51,4 +51,8 @@ h2 {
 }
 .instructions strong {
     color: rgb(var(--accent));
+}
+.loading-infinity{
+    display: flex;
+    justify-content: center;
 }

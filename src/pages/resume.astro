@@ -1,24 +1,36 @@
 ---
 import BasicPage from '../layouts/BasicPage.astro';
+import '../styles/resume.scss';
 ---
 <BasicPage pageName="Resume">
    <p class="instructions">
      This is my resume. Enjoy reading it !
    </p>
-    <div id="resume-content" class="instructions"> 
+   <div id="resume-content" class="instructions">
+    <div class="loading-infinity">
+      <img  id="loading-resume-icon" src={import.meta.env.BASE_URL+"infinityload.svg"}> 
+    </div>
     </div>
 </BasicPage>
 <script>
-    const url = "https://k4kyrw.deta.dev";
-    var elem = document.getElementById("resume-content")!;
-    fetch(url+'/resume')
+  const url = "https://k4kyrw.deta.dev";
+  var elem = document.getElementById("resume-content")!;
+  fetch(url+'/resume')
   .then((response) => response.json())
   .then((resume) => {
+    document.getElementById("loading-resume-icon")!.hidden = true;
+    console.log(resume);
     for(const category of resume.categories){
-        elem.innerHTML+="<h2>"+category.name+"<h2>";
+      elem.innerHTML+="<h2>"+category.name+"<h2>";
         for(const article of category.articles){
-            elem.innerHTML+="<h3>"+article.title+"("+article.dates+")"+"</h3>";
-            elem.innerHTML+="<p>"+article.content+"</p>";
+          var articleHtml = "<article>"
+            articleHtml+="<header>";
+            articleHtml+="<h3>"+article.title+"</h3>";
+            if(article.date!==undefined)articleHtml+="<time>"+article.date+"</time>";
+            articleHtml+="</header>";
+            if(article.content!==undefined) articleHtml+="<p>"+article.content+"</p>";
+            articleHtml+="</article>";
+            elem.innerHTML+=articleHtml;
         }
     }
   });

@@ -1,0 +1,18 @@
+article {
+    display: flex;
+    flex-direction: column;
+}
+article header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    h3 {
+        padding: 0px;
+        margin: 0px;
+    }
+    time {
+        font-style: italic;
+        text-align: right;
+    }
+    
+}
