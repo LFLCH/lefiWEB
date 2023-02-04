@@ -1,11 +1,18 @@
 article {
     display: flex;
     flex-direction: column;
+
+    p {
+        margin-top: 0px;
+    }
+
 }
 article header {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column-reverse;
+    .meta-data{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content : space-between;
+    }
     h3 {
         padding: 0px;
         margin: 0px;
@@ -14,5 +21,7 @@ article header {
         font-style: italic;
         text-align: right;
     }
-    
+    .location {
+        font-weight: bolder;
+    }
 }

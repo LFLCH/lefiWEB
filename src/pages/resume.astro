@@ -25,10 +25,21 @@ import '../styles/resume.scss';
         for(const article of category.articles){
           var articleHtml = "<article>"
             articleHtml+="<header>";
-            articleHtml+="<h3>"+article.title+"</h3>";
+            var peopleInfo = article.teamsize==undefined?"":(" ~"+(article.teamsize==1?"Alone":(article.teamsize+" person team")))
+            articleHtml+="<h3>"+article.title+peopleInfo+"</h3>";
+            articleHtml+="<div class=meta-data>";
             if(article.date!==undefined)articleHtml+="<time>"+article.date+"</time>";
+            if(article.place!==undefined) articleHtml+="<div class=location>"+article.place+"</div>"
+            articleHtml+="</div>";
             articleHtml+="</header>";
             if(article.content!==undefined) articleHtml+="<p>"+article.content+"</p>";
+            if(article.tags!==undefined){
+              articleHtml+="<span class=tags>  ";
+              for(let tid in article.tags){
+                  articleHtml+=(+tid==0?"":", ")+article.tags[tid];
+              }
+              articleHtml+=" </span>";
+            }
             articleHtml+="</article>";
             elem.innerHTML+=articleHtml;
         }
