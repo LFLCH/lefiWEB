@@ -25,3 +25,15 @@ article header {
         font-weight: bolder;
     }
 }
+.download-button {
+    text-decoration: none;
+    background-color:rgb(var(--accent));
+    font-weight:500;
+    color:white;
+    padding: 0.5em;
+    border-radius: 15px;
+}
+.resume-options-wrapper{
+    display: flex;
+    justify-content: flex-end;
+}

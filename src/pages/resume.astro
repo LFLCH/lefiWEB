@@ -3,14 +3,17 @@ import BasicPage from '../layouts/BasicPage.astro';
 import '../styles/resume.scss';
 ---
 <BasicPage pageName="Resume">
-   <p class="instructions">
-     This is my resume. Enjoy reading it !
-   </p>
-   <div id="resume-content" class="instructions">
+  <p class="instructions">
+    This is my resume. Enjoy reading it !
+  </p>
+  <div id="resume-content" class="instructions">
+    <div class="resume-options-wrapper">
+      <a class="download-button" href="https://k4kyrw.deta.dev/resume/pdf">See original</a>
+    </div>
     <div class="loading-infinity">
       <img  id="loading-resume-icon" src={import.meta.env.BASE_URL+"infinityload.svg"}> 
     </div>
-    </div>
+  </div>
 </BasicPage>
 <script>
   const url = "https://k4kyrw.deta.dev";
