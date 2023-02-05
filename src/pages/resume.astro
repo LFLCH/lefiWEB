@@ -21,7 +21,6 @@ import '../styles/resume.scss';
   .then((response) => response.json())
   .then((resume) => {
     document.getElementById("loading-icon")!.hidden = true;
-    console.log(resume);
     for(const category of resume.categories){
       elem.innerHTML+="<h2>"+category.name+"<h2>";
         for(const article of category.articles){

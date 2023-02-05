@@ -2,8 +2,9 @@
 import Navigation from "../components/Navigation.astro";
 import Layout from "./Layout.astro";
 
-const {pageName} = Astro.props;
-
+let {pageName} = Astro.props;
+const frontmatter = Astro.props.frontmatter;
+if(frontmatter!==undefined)pageName = frontmatter.title;
 ---
 <Layout title={"Léo Filoche | " + pageName}>
 <main>

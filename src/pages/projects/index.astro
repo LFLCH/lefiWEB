@@ -1,14 +1,18 @@
 ---
-import Loading from "../components/Loading.astro";
-import BasicPage from "../layouts/BasicPage.astro";
+import Loading from "../../components/Loading.astro";
+import BasicPage from "../../layouts/BasicPage.astro";
 
+const posts = await Astro.glob("./school-projects.md");
 ---
 
 <BasicPage pageName="Projects">
   <p class="instructions">
     I made some projects during my years at the university. Here is a list of some of them. 
   </p>
-    <div class="instructions">
+    <div class="instructions"> 
+      <ul>
+        {posts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+      </ul>
         <ul id="projects"> </ul>
         <Loading></Loading> 
     </div> 
