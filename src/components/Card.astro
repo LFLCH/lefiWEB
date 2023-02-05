@@ -4,14 +4,16 @@ export interface Props {
 	title: string;
 	body: string;
 	href: string;
+	external?: boolean;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body,external } = Astro.props;
 const baseUrl = href.charAt(0)=='/'?import.meta.env.BASE_URL.slice(0,-1):""; 
+const target =  external?"_blank":"_self";
 ---
 
 <div class="link-card">
-	<a href={baseUrl+href}>
+	<a href={baseUrl+href} target={target}>
 		<h2>
 			{title}
 		</h2>

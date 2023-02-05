@@ -1,0 +1,26 @@
+---
+import '../styles/card.scss';
+import Loading from "../components/Loading.astro";
+import BasicPage from "../layouts/BasicPage.astro";
+
+---
+
+<BasicPage pageName="Projects">
+  <p class="instructions">
+    I made some projects during my years at the university. Here is a list of some of them. 
+  </p> 
+  <div id="projects" role="list" class="link-card-grid"> </div>
+  <Loading></Loading>  
+</BasicPage>
+<script>
+   const url = "https://k4kyrw.deta.dev";
+    var elem = document.getElementById("projects")!;
+    fetch(url+'/projects')
+  .then((response) => response.json())
+  .then((projets:any[]) => {
+    document.getElementById("loading-icon")!.hidden = true;
+    for(let projet of projets){
+        elem.innerHTML+="<div class=link-card><a href="+projet.link+ " target=_blank><h2>"+projet.name+"</h2><p>"+projet.description+"</p></a></div>";
+    }
+  });
+</script>

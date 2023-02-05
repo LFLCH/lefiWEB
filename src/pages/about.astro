@@ -1,9 +1,20 @@
 ---
+import Card from "../components/Card.astro";
 import BasicPage from "../layouts/BasicPage.astro"
-
+import '../styles/about.scss';
 ---
 
 <BasicPage pageName="About">
    <p class="instructions">I am 4th year student in Computer science, currently following courses at the ESIR engineering school at Rennes, France.
    </p>
+      <h2 class="about-category">About me</h2>
+      <div role="list" class="link-card-grid">
+         <Card title="Github" href="https://github.com/LFLCH/" body="You can find my public account here." external={true}></Card>
+       </div>
+    <h2 class="about-category">About this site</h2>
+    <div role="list" class="link-card-grid">
+      <Card title="lefiWEB" href="https://github.com/LFLCH/lefiWEB" body="The source code of this site." external={true}></Card>
+      <Card title="lefiAPI" href="https://github.com/LFLCH/lefiAPI" body="The source code of the API that this site reaches to find some info that can often change ." external={true}></Card>
+      <Card title="Resume Parser" href="https://github.com/LFLCH/resumeParser" body="The source code of a c# tool that I use to convert my resume into a JSON format." external={true}></Card>
+    </div>
 </BasicPage>
