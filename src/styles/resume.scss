@@ -27,12 +27,19 @@ article header {
 }
 .download-button {
     text-decoration: none;
-    background-color:rgb(var(--accent));
-    font-weight:500;
+    background-image: var(--accent-gradient);
+    background-color:rgb(var(--gradient-color1));
+    background-size: 400%;
     color:white;
+    font-weight:500;
     padding: 0.5em;
     border-radius: 15px;
+    width: 5.5em;
 }
+.download-button:hover{
+    font-style: italic;
+}
+
 .resume-options-wrapper{
     display: flex;
     justify-content: flex-end;

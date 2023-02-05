@@ -1,4 +1,5 @@
 ---
+import Loading from "../components/Loading.astro";
 import BasicPage from "../layouts/BasicPage.astro";
 
 ---
@@ -7,8 +8,9 @@ import BasicPage from "../layouts/BasicPage.astro";
   <p class="instructions">
     I made some projects during my years at the university. Here is a list of some of them. 
   </p>
-    <div>
-        <ul id="projects"> </ul> 
+    <div class="instructions">
+        <ul id="projects"> </ul>
+        <Loading></Loading> 
     </div> 
 </BasicPage>
 <script>
@@ -17,6 +19,7 @@ import BasicPage from "../layouts/BasicPage.astro";
     fetch(url+'/projects')
   .then((response) => response.json())
   .then((projets:any[]) => {
+    document.getElementById("loading-icon")!.hidden = true;
     for(let projet of projets){
         elem.innerHTML+="<li><a href="+projet.link+">"+projet.name+"</a></li>";
     }

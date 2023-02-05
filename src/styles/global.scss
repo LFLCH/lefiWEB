@@ -1,6 +1,8 @@
 :root {
     --accent: 91, 117, 194;
-    --accent-gradient: linear-gradient(45deg, rgb(58, 237, 142), #628cda 30%, white 60%);
+    --gradient-color1:58, 237, 142;
+    --gradient-color2:98, 140, 218;
+    --accent-gradient: linear-gradient(45deg, rgb(var(--gradient-color1)), rgb(var(--gradient-color2)) 30%, white 60%);
 }//3aed8e 628cda
 html {
     font-family: system-ui, sans-serif;

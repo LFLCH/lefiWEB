@@ -1,4 +1,5 @@
 ---
+import Loading from '../components/Loading.astro';
 import BasicPage from '../layouts/BasicPage.astro';
 import '../styles/resume.scss';
 ---
@@ -10,9 +11,7 @@ import '../styles/resume.scss';
     <div class="resume-options-wrapper">
       <a class="download-button" href="https://k4kyrw.deta.dev/resume/pdf">See original</a>
     </div>
-    <div class="loading-infinity">
-      <img  id="loading-resume-icon" src={import.meta.env.BASE_URL+"infinityload.svg"}> 
-    </div>
+    <Loading></Loading>
   </div>
 </BasicPage>
 <script>
@@ -21,7 +20,7 @@ import '../styles/resume.scss';
   fetch(url+'/resume')
   .then((response) => response.json())
   .then((resume) => {
-    document.getElementById("loading-resume-icon")!.hidden = true;
+    document.getElementById("loading-icon")!.hidden = true;
     console.log(resume);
     for(const category of resume.categories){
       elem.innerHTML+="<h2>"+category.name+"<h2>";
